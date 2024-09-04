@@ -78,17 +78,17 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     steps:
       - name: Download NuGet artifacts from Windows
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: nuget-windows-latest
           path: nuget-windows
       - name: Download NuGet artifacts from macOS
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: nuget-macos-latest
           path: nuget-macos
       - name: Download NuGet artifacts from Ubuntu
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: nuget-ubuntu-latest
           path: nuget-ubuntu
@@ -99,12 +99,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Download VS extension
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: Visual Studio Extension
           path: extension-win
       - name: Download VS for Mac extension
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: Visual Studio for Mac Extension
           path: extension-mac
